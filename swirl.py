@@ -64,6 +64,8 @@ class CoroutineRunner(object):
                         exc_info=True)
                 else:
                     self.web_handler._handle_request_exception(e)
+            else:
+                logging.error('Exception in swirl generator', exc_info=True)
 
 def make_asynchronous_decorator(io_loop):
     """
